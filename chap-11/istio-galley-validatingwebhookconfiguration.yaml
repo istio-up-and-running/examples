@@ -1,0 +1,135 @@
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingWebhookConfiguration
+metadata:
+  creationTimestamp: "2019-06-11T15:33:21Z"
+  generation: 1
+  labels:
+    app: galley
+    chart: galley
+    heritage: Tiller
+    istio: galley
+    release: istio
+  name: istio-galley
+  ownerReferences:
+  - apiVersion: extensions/v1beta1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Deployment
+    name: istio-galley
+    uid: 243d2a39-8883-11e9-a548-00505698ee31
+  resourceVersion: "6644740"
+  selfLink: /apis/admissionregistration.k8s.io/v1beta1/validatingwebhookconfigurations/istio-galley
+  uid: 3e764e60-8c5e-11e9-9e8d-00505698ee31
+webhooks:
+- admissionReviewVersions:
+  - v1beta1
+  clientConfig:
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMzVENDQWNXZ0F3SUJBZ0lRZUEyMjJqSi8rSkZINkN3TEhId3ByVEFOQmdrcWhraUc5dzBCQVFzRkFEQVkKTVJZd0ZBWURWUVFLRXcxamJIVnpkR1Z5TG14dlkyRnNNQjRYRFRFNU1EWXdOakUzTkRjME4xb1hEVEl3TURZdwpOVEUzTkRjME4xb3dHREVXTUJRR0ExVUVDaE1OWTJ4MWMzUmxjaTVzYjJOaGJEQ0NBU0l3RFFZSktvWklodmNOCkFRRUJCUUFEZ2dFUEFEQ0NBUW9DZ2dFQkFMWXNRUHpOdXIwZkljYVRhNHBiSEs3ODN3YStPRjZBdS84N0dQdkoKeXFoRnRqZFdleEU4WC9xR2xzUmx0TzVxUVFRWklyNkd1V3lxZFEwL1RGc0NXc1QyWnZaZXZxakZyVFYrOHlHOQpsNGVQRWFGSE1OMlR1eVI5a1FvQWRVZTZlbFQyRjNFZ2pRZTNIMGdSWUJnb2ZHOGloZDh4TDNVNkJQeVNyNjFBCmFmU0YwY2tHYlcxRTVjQ0NDK04vMjVMSVl1QnlyejZrMXhQVVJ6V0dyWmdFSytNQ1FGcWFQamFoTGhpS2JBZFgKYzI3L25ud1hXclNyWTdwRWFzQVNQbEJXWTFYRGFHOUxpTHpnNFRud291T09vaDhaZmlYbmVjMlViRFY0R0N0eAp3alUzcE9SNUxqSEFBZnJBSkt3Y1huSFBQR3kybjBGdWd2T3hWYjhiMVZWTDdGRUNBd0VBQWFNak1DRXdEZ1lEClZSMFBBUUgvQkFRREFnSUVNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUIKQUh4VmVDUCthdUFIdXZ3VkIwdUwxUUZwaGhVam8zRG5DYWZFalR2RWRFb0hWSGRjaTZMMHAxYWRLUkw2UnI5MApJVUMwU3ZEcDZhcHlUQXJVSjhlMkJkemJYcUU1c2tkaWxES055VkhFY1J4N0Y5djVTNHN2VEpSNlUvWVp5dkQ1CmtQaWtCMnRNT1Y3N2tIT1NSUFREZko3M2tvUlY4WVdjNFdHTDBJMnhJamY2TG9XZGs5dDdTYlhVVnVneExVWkUKamR4dEIrdTJDRzRMN29qNVAvZzZqMFV5TXNuRWpYbHZxQUtBaXUwY1B1U09IOVV1MS9qTUROcFZWYkdFZTFvVApIOXZFQnlEN0ZuZllHanFkQ2ZZM0RFcDNOQWFKUncvaXV2d3Qyb21mMmRncVJBRG1Td3lVN3ZDblJ0M0RnbXlpCi8xbTNZYVpHTmw2aVFHdXp0d1dRZklRPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    service:
+      name: istio-galley
+      namespace: istio-system
+      path: /admitpilot
+  failurePolicy: Fail
+  name: pilot.validation.istio.io
+  namespaceSelector: {}
+  rules:
+  - apiGroups:
+    - config.istio.io
+    apiVersions:
+    - v1alpha2
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - httpapispecs
+    - httpapispecbindings
+    - quotaspecs
+    - quotaspecbindings
+    scope: '*'
+  - apiGroups:
+    - rbac.istio.io
+    apiVersions:
+    - '*'
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - '*'
+    scope: '*'
+  - apiGroups:
+    - authentication.istio.io
+    apiVersions:
+    - '*'
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - '*'
+    scope: '*'
+  - apiGroups:
+    - networking.istio.io
+    apiVersions:
+    - '*'
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - destinationrules
+    - envoyfilters
+    - gateways
+    - serviceentries
+    - sidecars
+    - virtualservices
+    scope: '*'
+  sideEffects: Unknown
+  timeoutSeconds: 30
+- admissionReviewVersions:
+  - v1beta1
+  clientConfig:
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMzVENDQWNXZ0F3SUJBZ0lRZUEyMjJqSi8rSkZINkN3TEhId3ByVEFOQmdrcWhraUc5dzBCQVFzRkFEQVkKTVJZd0ZBWURWUVFLRXcxamJIVnpkR1Z5TG14dlkyRnNNQjRYRFRFNU1EWXdOakUzTkRjME4xb1hEVEl3TURZdwpOVEUzTkRjME4xb3dHREVXTUJRR0ExVUVDaE1OWTJ4MWMzUmxjaTVzYjJOaGJEQ0NBU0l3RFFZSktvWklodmNOCkFRRUJCUUFEZ2dFUEFEQ0NBUW9DZ2dFQkFMWXNRUHpOdXIwZkljYVRhNHBiSEs3ODN3YStPRjZBdS84N0dQdkoKeXFoRnRqZFdleEU4WC9xR2xzUmx0TzVxUVFRWklyNkd1V3lxZFEwL1RGc0NXc1QyWnZaZXZxakZyVFYrOHlHOQpsNGVQRWFGSE1OMlR1eVI5a1FvQWRVZTZlbFQyRjNFZ2pRZTNIMGdSWUJnb2ZHOGloZDh4TDNVNkJQeVNyNjFBCmFmU0YwY2tHYlcxRTVjQ0NDK04vMjVMSVl1QnlyejZrMXhQVVJ6V0dyWmdFSytNQ1FGcWFQamFoTGhpS2JBZFgKYzI3L25ud1hXclNyWTdwRWFzQVNQbEJXWTFYRGFHOUxpTHpnNFRud291T09vaDhaZmlYbmVjMlViRFY0R0N0eAp3alUzcE9SNUxqSEFBZnJBSkt3Y1huSFBQR3kybjBGdWd2T3hWYjhiMVZWTDdGRUNBd0VBQWFNak1DRXdEZ1lEClZSMFBBUUgvQkFRREFnSUVNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUIKQUh4VmVDUCthdUFIdXZ3VkIwdUwxUUZwaGhVam8zRG5DYWZFalR2RWRFb0hWSGRjaTZMMHAxYWRLUkw2UnI5MApJVUMwU3ZEcDZhcHlUQXJVSjhlMkJkemJYcUU1c2tkaWxES055VkhFY1J4N0Y5djVTNHN2VEpSNlUvWVp5dkQ1CmtQaWtCMnRNT1Y3N2tIT1NSUFREZko3M2tvUlY4WVdjNFdHTDBJMnhJamY2TG9XZGs5dDdTYlhVVnVneExVWkUKamR4dEIrdTJDRzRMN29qNVAvZzZqMFV5TXNuRWpYbHZxQUtBaXUwY1B1U09IOVV1MS9qTUROcFZWYkdFZTFvVApIOXZFQnlEN0ZuZllHanFkQ2ZZM0RFcDNOQWFKUncvaXV2d3Qyb21mMmRncVJBRG1Td3lVN3ZDblJ0M0RnbXlpCi8xbTNZYVpHTmw2aVFHdXp0d1dRZklRPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    service:
+      name: istio-galley
+      namespace: istio-system
+      path: /admitmixer
+  failurePolicy: Fail
+  name: mixer.validation.istio.io
+  namespaceSelector: {}
+  rules:
+  - apiGroups:
+    - config.istio.io
+    apiVersions:
+    - v1alpha2
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - rules
+    - attributemanifests
+    - circonuses
+    - deniers
+    - fluentds
+    - kubernetesenvs
+    - listcheckers
+    - memquotas
+    - noops
+    - opas
+    - prometheuses
+    - rbacs
+    - solarwindses
+    - stackdrivers
+    - cloudwatches
+    - dogstatsds
+    - statsds
+    - stdios
+    - apikeys
+    - authorizations
+    - checknothings
+    - listentries
+    - logentries
+    - metrics
+    - quotas
+    - reportnothings
+    - tracespans
+    scope: '*'
+  sideEffects: Unknown
+  timeoutSeconds: 30
