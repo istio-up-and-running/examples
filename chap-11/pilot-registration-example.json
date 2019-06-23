@@ -1,0 +1,516 @@
+[
+  {
+   "service-key": "consul-consul-connect-injector-svc.consul.svc.cluster.local",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.42",
+     "port": 8080
+    }
+   ]
+  },
+  {
+   "service-key": "consul-consul-dns.consul.svc.cluster.local|dns-tcp",
+   "hosts": []
+  },
+  {
+   "service-key": "consul-consul-dns.consul.svc.cluster.local|dns-udp",
+   "hosts": []
+  },
+  {
+   "service-key": "consul-consul-server.consul.svc.cluster.local|dns-tcp",
+   "hosts": []
+  },
+  {
+   "service-key": "consul-consul-server.consul.svc.cluster.local|dns-udp",
+   "hosts": []
+  },
+  {
+   "service-key": "consul-consul-server.consul.svc.cluster.local|http",
+   "hosts": []
+  },
+  {
+   "service-key": "consul-consul-server.consul.svc.cluster.local|serflan-tcp",
+   "hosts": []
+  },
+  {
+   "service-key": "consul-consul-server.consul.svc.cluster.local|serflan-udp",
+   "hosts": []
+  },
+  {
+   "service-key": "consul-consul-server.consul.svc.cluster.local|serfwan-tcp",
+   "hosts": []
+  },
+  {
+   "service-key": "consul-consul-server.consul.svc.cluster.local|serfwan-udp",
+   "hosts": []
+  },
+  {
+   "service-key": "consul-consul-server.consul.svc.cluster.local|server",
+   "hosts": []
+  },
+  {
+   "service-key": "consul-consul-ui.consul.svc.cluster.local|http",
+   "hosts": []
+  },
+  {
+   "service-key": "details.default.svc.cluster.local|http",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.22",
+     "port": 9080
+    }
+   ]
+  },
+  {
+   "service-key": "grafana.istio-system.svc.cluster.local|http",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.33",
+     "port": 3000
+    }
+   ]
+  },
+  {
+   "service-key": "httpbin.consul.svc.cluster.local|http",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.40",
+     "port": 80
+    }
+   ]
+  },
+  {
+   "service-key": "istio-citadel.istio-system.svc.cluster.local|grpc-citadel",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.31",
+     "port": 8060
+    }
+   ]
+  },
+  {
+   "service-key": "istio-citadel.istio-system.svc.cluster.local|http-monitoring",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.31",
+     "port": 15014
+    }
+   ]
+  },
+  {
+   "service-key": "istio-egressgateway.istio-system.svc.cluster.local|http2",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.35",
+     "port": 80
+    }
+   ]
+  },
+  {
+   "service-key": "istio-egressgateway.istio-system.svc.cluster.local|https",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.35",
+     "port": 443
+    }
+   ]
+  },
+  {
+   "service-key": "istio-egressgateway.istio-system.svc.cluster.local|tls",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.35",
+     "port": 15443
+    }
+   ]
+  },
+  {
+   "service-key": "istio-galley.istio-system.svc.cluster.local|grpc-mcp",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.32",
+     "port": 9901
+    }
+   ]
+  },
+  {
+   "service-key": "istio-galley.istio-system.svc.cluster.local|http-monitoring",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.32",
+     "port": 15014
+    }
+   ]
+  },
+  {
+   "service-key": "istio-galley.istio-system.svc.cluster.local|https-validation",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.32",
+     "port": 443
+    }
+   ]
+  },
+  {
+   "service-key": "istio-ingressgateway.istio-system.svc.cluster.local|http2",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.30",
+     "port": 80
+    }
+   ]
+  },
+  {
+   "service-key": "istio-ingressgateway.istio-system.svc.cluster.local|https",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.30",
+     "port": 443
+    }
+   ]
+  },
+  {
+   "service-key": "istio-ingressgateway.istio-system.svc.cluster.local|https-grafana",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.30",
+     "port": 15031
+    }
+   ]
+  },
+  {
+   "service-key": "istio-ingressgateway.istio-system.svc.cluster.local|https-kiali",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.30",
+     "port": 15029
+    }
+   ]
+  },
+  {
+   "service-key": "istio-ingressgateway.istio-system.svc.cluster.local|https-prometheus",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.30",
+     "port": 15030
+    }
+   ]
+  },
+  {
+   "service-key": "istio-ingressgateway.istio-system.svc.cluster.local|https-tracing",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.30",
+     "port": 15032
+    }
+   ]
+  },
+  {
+   "service-key": "istio-ingressgateway.istio-system.svc.cluster.local|status-port",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.30",
+     "port": 15020
+    }
+   ]
+  },
+  {
+   "service-key": "istio-ingressgateway.istio-system.svc.cluster.local|tcp",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.30",
+     "port": 31400
+    }
+   ]
+  },
+  {
+   "service-key": "istio-ingressgateway.istio-system.svc.cluster.local|tls",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.30",
+     "port": 15443
+    }
+   ]
+  },
+  {
+   "service-key": "istio-pilot.istio-system.svc.cluster.local|grpc-xds",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.24",
+     "port": 15010
+    }
+   ]
+  },
+  {
+   "service-key": "istio-pilot.istio-system.svc.cluster.local|http-legacy-discovery",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.24",
+     "port": 8080
+    }
+   ]
+  },
+  {
+   "service-key": "istio-pilot.istio-system.svc.cluster.local|http-monitoring",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.24",
+     "port": 15014
+    }
+   ]
+  },
+  {
+   "service-key": "istio-pilot.istio-system.svc.cluster.local|https-xds",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.24",
+     "port": 15011
+    }
+   ]
+  },
+  {
+   "service-key": "istio-policy.istio-system.svc.cluster.local|grpc-mixer",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.26",
+     "port": 9091
+    }
+   ]
+  },
+  {
+   "service-key": "istio-policy.istio-system.svc.cluster.local|grpc-mixer-mtls",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.26",
+     "port": 15004
+    }
+   ]
+  },
+  {
+   "service-key": "istio-policy.istio-system.svc.cluster.local|http-monitoring",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.26",
+     "port": 15014
+    }
+   ]
+  },
+  {
+   "service-key": "istio-sidecar-injector.istio-system.svc.cluster.local",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.34",
+     "port": 443
+    }
+   ]
+  },
+  {
+   "service-key": "istio-telemetry.istio-system.svc.cluster.local|grpc-mixer",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.28",
+     "port": 9091
+    }
+   ]
+  },
+  {
+   "service-key": "istio-telemetry.istio-system.svc.cluster.local|grpc-mixer-mtls",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.28",
+     "port": 15004
+    }
+   ]
+  },
+  {
+   "service-key": "istio-telemetry.istio-system.svc.cluster.local|http-monitoring",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.28",
+     "port": 15014
+    }
+   ]
+  },
+  {
+   "service-key": "istio-telemetry.istio-system.svc.cluster.local|prometheus",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.28",
+     "port": 42422
+    }
+   ]
+  },
+  {
+   "service-key": "jaeger-agent.istio-system.svc.cluster.local|agent-binary",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.29",
+     "port": 6832
+    }
+   ]
+  },
+  {
+   "service-key": "jaeger-agent.istio-system.svc.cluster.local|agent-compact",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.29",
+     "port": 6831
+    }
+   ]
+  },
+  {
+   "service-key": "jaeger-agent.istio-system.svc.cluster.local|agent-zipkin-thrift",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.29",
+     "port": 5775
+    }
+   ]
+  },
+  {
+   "service-key": "jaeger-collector.istio-system.svc.cluster.local|jaeger-collector-http",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.29",
+     "port": 14268
+    }
+   ]
+  },
+  {
+   "service-key": "jaeger-collector.istio-system.svc.cluster.local|jaeger-collector-tchannel",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.29",
+     "port": 14267
+    }
+   ]
+  },
+  {
+   "service-key": "jaeger-query.istio-system.svc.cluster.local|query-http",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.29",
+     "port": 16686
+    }
+   ]
+  },
+  {
+   "service-key": "kiali.istio-system.svc.cluster.local|http-kiali",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.21",
+     "port": 20001
+    }
+   ]
+  },
+  {
+   "service-key": "kube-dns.kube-system.svc.cluster.local|dns",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.27",
+     "port": 53
+    },
+    {
+     "ip_address": "10.40.0.2",
+     "port": 53
+    }
+   ]
+  },
+  {
+   "service-key": "kube-dns.kube-system.svc.cluster.local|dns-tcp",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.27",
+     "port": 53
+    },
+    {
+     "ip_address": "10.40.0.2",
+     "port": 53
+    }
+   ]
+  },
+  {
+   "service-key": "kube-dns.kube-system.svc.cluster.local|metrics",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.27",
+     "port": 9153
+    },
+    {
+     "ip_address": "10.40.0.2",
+     "port": 9153
+    }
+   ]
+  },
+  {
+   "service-key": "kubernetes.default.svc.cluster.local|https",
+   "hosts": [
+    {
+     "ip_address": "10.199.75.64",
+     "port": 6443
+    }
+   ]
+  },
+  {
+   "service-key": "productpage.default.svc.cluster.local|http",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.38",
+     "port": 9080
+    }
+   ]
+  },
+  {
+   "service-key": "prometheus.istio-system.svc.cluster.local|http-prometheus",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.39",
+     "port": 9090
+    }
+   ]
+  },
+  {
+   "service-key": "ratings.default.svc.cluster.local|http",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.25",
+     "port": 9080
+    }
+   ]
+  },
+  {
+   "service-key": "reviews.default.svc.cluster.local|http",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.23",
+     "port": 9080
+    },
+    {
+     "ip_address": "10.32.0.36",
+     "port": 9080
+    },
+    {
+     "ip_address": "10.32.0.37",
+     "port": 9080
+    }
+   ]
+  },
+  {
+   "service-key": "tracing.istio-system.svc.cluster.local|http-query",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.29",
+     "port": 16686
+    }
+   ]
+  },
+  {
+   "service-key": "zipkin.istio-system.svc.cluster.local|http",
+   "hosts": [
+    {
+     "ip_address": "10.32.0.29",
+     "port": 9411
+    }
+   ]
+  }
+ ]
