@@ -1,0 +1,22 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: httpbin-remote
+spec:
+  hosts:
+  - httpbin.remote.global # remote postfix is used for Istio’s DNS plugin
+  location: MESH_INTERNAL # make sure we use mTLS
+  ports:
+  - name: http
+    number: 8000
+    protocol: http
+  resolution: DNS
+  addresses:
+  # does not need to be routable, but needs to be unique for each service you’re
+  # routing across clusters; used by Istio’s DNS plugin
+  - 127.255.0.2
+  endpoints:
+  - address: 1.2.3.4 # address of our remote cluster’s ingress
+    ports:
+      # Do not change this port value if you’re using the Istio multi cluster installation
+      http: 15443
