@@ -1,0 +1,13 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+ name: foo-default
+spec:
+ hosts:
+ - bar.foo.com
+ gateways:
+ - foo-com-gateway
+ http:
+ - route:
+   - destination:
+       host: bar.foo.svc.cluster.local
