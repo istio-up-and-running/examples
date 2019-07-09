@@ -1,0 +1,17 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: https-wikipedia-org
+spec:
+  hosts:
+  - wikipedia.org
+  ports:
+  - number: 443
+    name: https
+    protocol: HTTPS
+  location: MESH_EXTERNAL
+  resolution: DNS
+  endpoints:
+  - address: istio-egressgateway.istio-system.svc.cluster.local
+    ports:
+      http: 443
