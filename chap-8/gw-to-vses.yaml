@@ -1,0 +1,42 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: foo-com-gateway
+spec:
+  selector:
+    app: gateway-workloads
+  servers:
+  - hosts:
+    - *.foo.com
+    port:
+      number: 80
+      name: http
+      protocol: HTTP
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: foo-com-virtual-service
+spec:
+  hosts:
+  - api.foo.com
+  gateways:
+  - foo-com-gateway
+  http:
+  - route:
+    - destination:
+        host: api.foo.svc.cluster.local
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: foo-com-virtual-service
+spec:
+  hosts:
+  - www.foo.com
+  gateways:
+  - foo-com-gateway
+  http:
+  - route:
+    - destination:
+        host: webserver.foo.svc.cluster.local
