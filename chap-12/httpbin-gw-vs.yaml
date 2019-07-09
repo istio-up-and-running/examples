@@ -19,7 +19,7 @@ metadata:
   name: httpbin
 spec:
   hosts:
-  - "10.199.75.64"
+  - "httpbin.svc.default.cluster.local"
   gateways:
   - httpbin-gateway
   - mesh # also direct traffic in the mesh with the same VirtualService
@@ -29,4 +29,3 @@ spec:
         host: httpbin
         port:
           number: 8000
-
