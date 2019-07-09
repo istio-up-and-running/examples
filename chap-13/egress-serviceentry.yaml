@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  generation: 1
+  name: egress-service-entry
+  namespace: "default"
+  resourceVersion: ""
+  selfLink: /apis/networking.istio.io/v1alpha3/namespaces/default/serviceentries/egress-service-entry
+  uid: ""
+spec:
+  endpoints:
+  - address: aa99e9d64b25011e8918e02ccbc3211d-4890909.us-east-2.elb.amazonaws.com
+  hosts:
+  - svc.cluster-b.remote
+  location: MESH_EXTERNAL
+  ports:
+  - name: https
+    number: 443
+    protocol: HTTPS
+  resolution: DNS
