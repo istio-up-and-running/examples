@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: https-wikipedia-org-egress
+spec:
+  selector:
+    istio: egressgateway
+  servers:
+  - port:
+      number: 443
+      name: https-wikipedia-org-egress-443
+      protocol: TLS # Mark as TLS as we are passing HTTPS through.
+    hosts:
+    - wikipedia.org
+    tls:
+      mode: PASSTHROUGH
