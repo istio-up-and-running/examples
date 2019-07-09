@@ -9,7 +9,7 @@ metadata:
   uid: ""
 spec:
   endpoints:
-  - address: aa99e9d64b25011e8918e02ccbc3211d-4890909.us-east-2.elb.amazonaws.com
+  - address: # <external IP address here>
   hosts:
   - svc.cluster-b.remote
   location: MESH_EXTERNAL
