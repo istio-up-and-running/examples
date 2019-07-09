@@ -7,7 +7,6 @@ spec:
   - "*"
   gateways:
   - httpbin-gateway
-  - mesh # also direct traffic in the mesh with the same VirtualService
   http:
   - route:
     - destination:
