@@ -1,0 +1,17 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: foo-default
+spec:
+  hosts:
+  - foo.com
+  gateways:
+  - foo-gateway
+  http:
+  - route:
+    - destination:
+        host: foo.default.svc.cluster.local
+    timeout: 2s
+    retries:
+      attempts: 3
+      perTryTimeout: 500ms
