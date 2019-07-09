@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  generation: 1
+  name: reviews-tls-origination
+  namespace: "default"
+  resourceVersion: ""
+  selfLink: /apis/networking.istio.io/v1alpha3/namespaces/default/destinationrules/reviews-tls-origination
+  uid: ""
+spec:
+  host: svc.cluster-b.remote
+  trafficPolicy:
+    portLevelSettings:
+    - port:
+        number: 443
+      tls:
+        caCertificates: /etc/certs/cert-chain.pem
+        clientCertificate: /etc/certs/cert-chain.pem
+        mode: MUTUAL
+        privateKey: /etc/certs/key.pem
