@@ -1,0 +1,24 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  generation: 1
+  name: reviews-egress-splitter-virtual-service
+  namespace: "default"
+  resourceVersion: ""
+  selfLink: /apis/networking.istio.io/v1alpha3/namespaces/default/virtualservices/reviews-egress-splitter-virtual-service
+  uid: ""
+spec:
+  hosts:
+  - reviews.default.svc.cluster.local
+  http:
+  - rewrite:
+      authority: reviews.default.svc.cluster-b.remote
+    route:
+    - destination:
+        host: svc.cluster-b.remote
+        port:
+          number: 443
+      weight: 50
+    - destination:
+        host: reviews
+      weight: 50
