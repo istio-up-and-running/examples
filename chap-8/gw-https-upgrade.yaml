@@ -1,0 +1,26 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: foo-com-gateway
+spec:
+  selector:
+    app: gateway-workloads
+  servers:
+  - hosts:
+    - foo.com
+    port:
+      number: 80
+      name: http
+      protocol: HTTP
+    tls:
+      httpsRedirect: true # sends 301 redirect for http requests
+  - hosts:
+    - foo.com
+    port:
+      number: 443
+      name: https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE #enables HTTPS on this port
+      serverCertificate: /etc/certs/foo-com-public.pem
+      privateKey: /etc/certs/foo-com-privatekey.pem
