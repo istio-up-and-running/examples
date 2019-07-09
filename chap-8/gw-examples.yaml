@@ -1,0 +1,29 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+ name: foo-gateway
+spec:
+ selector:
+   app: my-gateway-impl
+ servers:
+ - hosts:
+   - foo.com
+   port:
+     number: 80
+     name: http
+     protocol: HTTP
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+ name: wildcard-gateway
+spec:
+ selector:
+   app: my-gateway-impl
+ servers:
+ - hosts:
+   - *.com
+   port:
+     number: 80
+     name: http
+     protocol: HTTP
