@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  generation: 1
+  name: reviews-ingress-virtual-service
+  namespace: "default"
+  resourceVersion: ""
+  selfLink: /apis/networking.istio.io/v1alpha3/namespaces/default/virtualservices/reviews-ingress-virtual-service
+  uid: ""
+spec:
+  gateways:
+  - ingress-gateway
+  hosts:
+  - reviews.default.svc.cluster-b.remote
+  http:
+  - route:
+    - destination:
+        host: reviews
