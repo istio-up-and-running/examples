@@ -1,0 +1,17 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: foo-canary-virtual-service
+spec:
+  hosts:
+  - foo.default.svc.cluster.local
+  tcp:
+  - route:
+    - destination:
+        host: foo.default.svc.cluster.local
+        subset: v2
+      weight: 5
+    - destination:
+        host: foo.default.svc.cluster.local
+        subset: v1
+      weight: 95
