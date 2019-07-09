@@ -1,0 +1,21 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  generation: 1
+  name: bookinfo-vs
+  namespace: "default"
+  resourceVersion: ""
+  selfLink: /apis/networking.istio.io/v1alpha3/namespaces/default/virtualservices/bookinfo-vs
+  uid: ""
+spec:
+  gateways:
+  - ingress-gateway
+  hosts:
+  - '*'
+  http:
+  - match:
+    - uri:
+        prefix: /productpage
+    route:
+    - destination:
+        host: productpage
