@@ -1,0 +1,17 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: k8s-my-service
+spec:
+  hosts:
+  # the names an application can use in k8s to target this service
+  - my-service
+  - my-service.default
+  - my-service.default.svc.cluster.local
+  ports:
+  - number: 80
+    name: http
+    protocol: HTTP
+  resolution: STATIC
+  endpoints:
+  - address: 1.2.3.4
